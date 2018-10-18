@@ -85,7 +85,7 @@
     </collisions>
     <autotileFormats/>
     <atlases>
-        <atlas allScenes="true" desc="" dirty="true" id="0" members="0,50,47,31," name="Main Atlas (Default)" pvr="false" resize="0" target="0"/>
+        <atlas allScenes="true" desc="" dirty="true" id="0" members="0,50,52,47,31," name="Main Atlas (Default)" pvr="false" resize="0" target="0"/>
     </atlases>
     <libraries/>
 </game>
