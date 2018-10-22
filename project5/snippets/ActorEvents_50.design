@@ -13,17 +13,93 @@
     </group>
     <group eventID="1" id="-1"/>
     <group eventID="2" id="0">
-        <step comment="false" x="0" y="194">
+        <step comment="false" x="97" y="259">
             <group eventID="2" id="-1">
-                <push-shove comment="false" x="11" y="219">
-                    <ACTOR eid="this" id="0"/>
-                    <int id="1" val="0"/>
-                    <int id="2" val=""/>
-                    <int id="3" val=""/>
-                    <int id="4" val="5"/>
-                </push-shove>
+                <if comment="false" x="108" y="284">
+                    <group eventID="2" id="-1">
+                        <push-shove comment="false" x="119" y="322">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="1"/>
+                            <minus comment="false" id="2" x="0" y="0">
+                                <get-game-val-2 comment="false" id="0" x="0" y="0"/>
+                                <get-xy comment="false" id="1" x="0" y="0">
+                                    <ACTOR eid="this" id="0"/>
+                                    <int id="1" val="0"/>
+                                </get-xy>
+                            </minus>
+                            <minus comment="false" id="3" x="0" y="0">
+                                <get-game-val-3 comment="false" id="0" x="0" y="0"/>
+                                <get-xy comment="false" id="1" x="0" y="0">
+                                    <ACTOR eid="this" id="0"/>
+                                    <int id="1" val="1"/>
+                                </get-xy>
+                            </minus>
+                            <int id="4" val="5"/>
+                        </push-shove>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <getanim comment="false" id="0" x="0" y="0">
+                            <ACTOR eid="this" id="0"/>
+                        </getanim>
+                        <int id="1" val="follow"/>
+                    </eq>
+                </if>
+                <else comment="false" x="108" y="379">
+                    <group eventID="2" id="-1">
+                        <push-shove comment="false" x="119" y="399">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="1"/>
+                            <minus comment="false" id="2" x="0" y="0">
+                                <get-game-val-2 comment="false" id="0" x="0" y="0"/>
+                                <get-xy comment="false" id="1" x="0" y="0">
+                                    <ACTOR eid="this" id="0"/>
+                                    <int id="1" val="0"/>
+                                </get-xy>
+                            </minus>
+                            <minus comment="false" id="3" x="0" y="0">
+                                <get-game-val-3 comment="false" id="0" x="0" y="0"/>
+                                <get-xy comment="false" id="1" x="0" y="0">
+                                    <ACTOR eid="this" id="0"/>
+                                    <int id="1" val="1"/>
+                                </get-xy>
+                            </minus>
+                            <int id="4" val="-5"/>
+                        </push-shove>
+                    </group>
+                </else>
             </group>
         </step>
     </group>
     <group eventID="2" id="-1"/>
+    <group eventID="3" id="0">
+        <event-periodic comment="false" x="31" y="108">
+            <group eventID="3" id="-1">
+                <if comment="false" x="42" y="135">
+                    <group eventID="3" id="-1">
+                        <setanim comment="false" x="53" y="173">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="avoid"/>
+                        </setanim>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <getanim comment="false" id="0" x="0" y="0">
+                            <ACTOR eid="this" id="0"/>
+                        </getanim>
+                        <int id="1" val="follow"/>
+                    </eq>
+                </if>
+                <else comment="false" x="42" y="212">
+                    <group eventID="3" id="-1">
+                        <setanim comment="false" x="53" y="232">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="follow"/>
+                        </setanim>
+                    </group>
+                </else>
+            </group>
+            <int id="0" val="4"/>
+            <ACTOR eid="this" id="2"/>
+        </event-periodic>
+    </group>
+    <group eventID="3" id="-1"/>
 </groups>

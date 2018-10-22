@@ -15,12 +15,7 @@
         </anim>
     </sprite>
     <actor adamp="0.0" ascale="false" atlasID="0" bodytype="2" continuous="false" desc="" eventsnippetid="18" fixedrot="true" fric="0.2" gid="3" id="50" ignoreg="false" inertia="0.01" ldamp="0.0" mass="100.0" name="Enemy" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="51" static="false">
-        <snippets>
-            <s enabled="true" id="15">
-                <prop id="2147483647" list="0" val="thisactor"/>
-                <prop id="1" list="0" val="15"/>
-            </s>
-        </snippets>
+        <snippets/>
     </actor>
     <actor adamp="0.0" ascale="false" atlasID="0" bodytype="2" continuous="false" desc="" eventsnippetid="13" fixedrot="true" fric="0.0" gid="0" id="0" ignoreg="true" inertia="0.01" ldamp="0.0" mass="0.01" name="Hero" oid="19717" pausable="true" physicsMode="0" rest="0.0" shared="true" sprite="1" static="false">
         <snippets>

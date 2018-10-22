@@ -77,8 +77,8 @@
     </attcats>
     <props/>
     <attributes>
-        <text cid="-1" id="0" name="hero x" save="true" value="0"/>
-        <text cid="-1" id="1" name="hero X" save="true" value="0"/>
+        <number cid="-1" id="3" name="Hero y" save="true" value="0.0"/>
+        <number cid="-1" id="2" name="Hero x" save="true" value="0"/>
     </attributes>
     <collisions>
         <poly id="1" name="Square" pts="0.0,0.0#0.0,1.0#1.0,1.0#1.0,0.0"/>
