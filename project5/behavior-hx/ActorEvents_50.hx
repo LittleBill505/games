@@ -4,6 +4,7 @@ import com.stencyl.graphics.G;
 import com.stencyl.graphics.BitmapWrapper;
 
 import com.stencyl.behavior.Script;
+import com.stencyl.behavior.Script.*;
 import com.stencyl.behavior.ActorScript;
 import com.stencyl.behavior.SceneScript;
 import com.stencyl.behavior.TimedTask;
@@ -18,27 +19,27 @@ import com.stencyl.models.Scene;
 import com.stencyl.models.Sound;
 import com.stencyl.models.Region;
 import com.stencyl.models.Font;
+import com.stencyl.models.Joystick;
 
 import com.stencyl.Engine;
 import com.stencyl.Input;
 import com.stencyl.Key;
 import com.stencyl.utils.Utils;
 
-import nme.ui.Mouse;
-import nme.display.Graphics;
-import nme.display.BlendMode;
-import nme.display.BitmapData;
-import nme.display.Bitmap;
-import nme.events.Event;
-import nme.events.KeyboardEvent;
-import nme.events.TouchEvent;
-import nme.net.URLLoader;
+import openfl.ui.Mouse;
+import openfl.display.Graphics;
+import openfl.display.BlendMode;
+import openfl.display.BitmapData;
+import openfl.display.Bitmap;
+import openfl.events.Event;
+import openfl.events.KeyboardEvent;
+import openfl.events.TouchEvent;
+import openfl.net.URLLoader;
 
 import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
-import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -68,32 +69,65 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class SceneEvents_0 extends SceneScript
-{          	
+class ActorEvents_50 extends ActorScript
+{
+	public var _Hero:Actor;
+	public var _Herox:Actor;
 	
-public var _blurRadius:Float;
-
-public var _s:Dynamic;
-
- 
- 	public function new(dummy:Int, engine:Engine)
+	
+	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
-		super(engine);
-		nameMap.set("blurRadius", "_blurRadius");
-_blurRadius = 0.0;
-nameMap.set("s", "_s");
-
+		super(actor);
+		nameMap.set("Hero", "_Hero");
+		nameMap.set("Hero x", "_Herox");
+		
 	}
 	
 	override public function init()
 	{
-		    
-/* ======================== When Creating ========================= */
-        /* This prevents the Hero from freezing if
-he exits the screen. */
-        getActor(1).makeAlwaysSimulate();
-
-	}	      	
+		
+		/* ======================== Actor of Type ========================= */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && sameAsAny(getActorType(0), event.otherActor.getType(),event.otherActor.getGroup()))
+			{
+				recycleActor(event.otherActor);
+			}
+		});
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getAnimation() == _Herox.getAnimation()))
+				{
+					actor.applyImpulse((Engine.engine.getGameAttribute("Hero x") - actor.getX()), (Engine.engine.getGameAttribute("Hero y") - actor.getY()), -5);
+				}
+				else
+				{
+					actor.applyImpulse((Engine.engine.getGameAttribute("Hero x") - actor.getX()), (Engine.engine.getGameAttribute("Hero y") - actor.getY()), 5);
+				}
+			}
+		});
+		
+		/* ======================= Every N seconds ======================== */
+		runPeriodically(1000 * 10, function(timeTask:TimedTask):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getAnimation() == "follow"))
+				{
+					actor.setAnimation("" + "avoid");
+				}
+				else
+				{
+					actor.setAnimation("" + "follow");
+				}
+			}
+		}, actor);
+		
+	}
 	
 	override public function forwardMessage(msg:String)
 	{

@@ -34,14 +34,16 @@
                                     <int id="1" val="1"/>
                                 </get-xy>
                             </minus>
-                            <int id="4" val="5"/>
+                            <int id="4" val="-5"/>
                         </push-shove>
                     </group>
                     <eq comment="false" id="0" x="0" y="0">
                         <getanim comment="false" id="0" x="0" y="0">
                             <ACTOR eid="this" id="0"/>
                         </getanim>
-                        <int id="1" val="follow"/>
+                        <getanim comment="false" id="1" x="0" y="0">
+                            <ACTOR eid="var" id="0" vid="2"/>
+                        </getanim>
                     </eq>
                 </if>
                 <else comment="false" x="108" y="379">
@@ -63,7 +65,7 @@
                                     <int id="1" val="1"/>
                                 </get-xy>
                             </minus>
-                            <int id="4" val="-5"/>
+                            <int id="4" val="5"/>
                         </push-shove>
                     </group>
                 </else>
@@ -97,7 +99,7 @@
                     </group>
                 </else>
             </group>
-            <int id="0" val="4"/>
+            <int id="0" val="10"/>
             <ACTOR eid="this" id="2"/>
         </event-periodic>
     </group>

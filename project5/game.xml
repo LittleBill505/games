@@ -78,7 +78,7 @@
     <props/>
     <attributes>
         <number cid="-1" id="3" name="Hero y" save="true" value="0.0"/>
-        <number cid="-1" id="2" name="Hero x" save="true" value="0"/>
+        <number cid="-1" id="2" name="Hero x" save="true" value="0.0"/>
     </attributes>
     <collisions>
         <poly id="1" name="Square" pts="0.0,0.0#0.0,1.0#1.0,1.0#1.0,0.0"/>

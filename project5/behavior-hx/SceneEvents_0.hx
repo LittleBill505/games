@@ -1,8 +1,10 @@
 package scripts;
 
 import com.stencyl.graphics.G;
+import com.stencyl.graphics.BitmapWrapper;
 
 import com.stencyl.behavior.Script;
+import com.stencyl.behavior.Script.*;
 import com.stencyl.behavior.ActorScript;
 import com.stencyl.behavior.SceneScript;
 import com.stencyl.behavior.TimedTask;
@@ -17,19 +19,28 @@ import com.stencyl.models.Scene;
 import com.stencyl.models.Sound;
 import com.stencyl.models.Region;
 import com.stencyl.models.Font;
+import com.stencyl.models.Joystick;
 
 import com.stencyl.Engine;
 import com.stencyl.Input;
+import com.stencyl.Key;
 import com.stencyl.utils.Utils;
 
-import nme.ui.Mouse;
-import nme.display.Graphics;
-import nme.display.BlendMode;
-import nme.display.BitmapData;
-import nme.display.Bitmap;
-import nme.events.Event;
-import nme.events.TouchEvent;
-import nme.net.URLLoader;
+import openfl.ui.Mouse;
+import openfl.display.Graphics;
+import openfl.display.BlendMode;
+import openfl.display.BitmapData;
+import openfl.display.Bitmap;
+import openfl.events.Event;
+import openfl.events.KeyboardEvent;
+import openfl.events.TouchEvent;
+import openfl.net.URLLoader;
+
+import box2D.common.math.B2Vec2;
+import box2D.dynamics.B2Body;
+import box2D.dynamics.B2Fixture;
+import box2D.dynamics.joints.B2Joint;
+import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -50,6 +61,7 @@ import com.stencyl.graphics.shaders.GrainShader;
 import com.stencyl.graphics.shaders.ExternalShader;
 import com.stencyl.graphics.shaders.InlineShader;
 import com.stencyl.graphics.shaders.BlurShader;
+import com.stencyl.graphics.shaders.SharpenShader;
 import com.stencyl.graphics.shaders.ScanlineShader;
 import com.stencyl.graphics.shaders.CSBShader;
 import com.stencyl.graphics.shaders.HueShader;
@@ -58,21 +70,30 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_63 extends ActorScript
-{          	
+class SceneEvents_0 extends SceneScript
+{
+	public var _blurRadius:Float;
+	public var _s:Dynamic;
 	
- 
- 	public function new(dummy:Int, actor:Actor, engine:Engine)
+	
+	public function new(dummy:Int, dummy2:Engine)
 	{
-		super(actor, engine);	
+		super();
+		nameMap.set("blurRadius", "_blurRadius");
+		_blurRadius = 0.0;
+		nameMap.set("s", "_s");
 		
 	}
 	
 	override public function init()
 	{
-		            actor.anchorToScreen();
-
-	}	      	
+		
+		/* ======================== When Creating ========================= */
+		/* This prevents the Hero from freezing if
+he exits the screen. */
+		getActor(1).makeAlwaysSimulate();
+		
+	}
 	
 	override public function forwardMessage(msg:String)
 	{
