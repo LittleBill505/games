@@ -2,12 +2,13 @@
 <groups>
     <group eventID="1" id="0">
         <step comment="false" x="15" y="15">
-            <group eventID="1" id="-1">
-                <set-game-val-1 comment="false" x="26" y="40">
-                    <int id="0" val="2"/>
-                </set-game-val-1>
-            </group>
+            <group eventID="1" id="-1"/>
         </step>
+    </group>
+    <group eventID="1" id="2">
+        <set-game-val-1 comment="false" x="27" y="40">
+            <int id="0" val="3"/>
+        </set-game-val-1>
     </group>
     <group eventID="1" id="-1"/>
 </groups>
