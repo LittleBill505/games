@@ -8,7 +8,7 @@
     <joints/>
     <regions/>
     <terrainRegions>
-        <terrainRegion b="64" g="64" group="1" h="1" id="0" name="Terrain 0" pts="4,0.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0" r="64" type="box" w="1" x="20" y="267"/>
+        <terrainRegion b="64" g="64" group="1" h="1" id="0" name="Terrain 0" pts="4,1.0,0.0,1.0,1.0,0.0,1.0,0.0,0.0" r="64" type="box" w="1" x="20" y="267"/>
     </terrainRegions>
     <actors>
         <actor a="0.0" aid="19" c="false" group="4" id="2" name="Enemy Ship 19" sx="1.0" sy="1.0" x="48" y="33" z="0"/>
