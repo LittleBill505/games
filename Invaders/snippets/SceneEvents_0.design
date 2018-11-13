@@ -15,7 +15,7 @@
         <event-group-create-kill comment="false" x="1" y="188">
             <group eventID="2" id="-1">
                 <incdec comment="false" x="12" y="220">
-                    <int id="0" val="0"/>
+                    <int id="0" val="1"/>
                     <int id="1" val="0"/>
                     <int id="2" val="1"/>
                 </incdec>
@@ -52,9 +52,9 @@
                 <if comment="false" x="26" y="67">
                     <group eventID="4" id="-1">
                         <draw-text comment="false" x="37" y="92">
-                            <int id="0" val="YOU WIN!"/>
-                            <int id="1" val="300"/>
-                            <int id="2" val="240"/>
+                            <int id="0" val="You Win!"/>
+                            <int id="1" val="320"/>
+                            <int id="2" val="265"/>
                         </draw-text>
                     </group>
                     <get-val-3-3 comment="false" id="0" x="0" y="0"/>
