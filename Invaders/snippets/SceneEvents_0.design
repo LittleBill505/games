@@ -39,6 +39,9 @@
                         <int id="1" val="5"/>
                     </eq>
                 </if>
+                <set-game-val-1 comment="false" x="26" y="107">
+                    <get-val-3-1 comment="false" id="0" x="0" y="0"/>
+                </set-game-val-1>
             </group>
         </step>
     </group>
@@ -53,12 +56,17 @@
                     <group eventID="4" id="-1">
                         <draw-text comment="false" x="37" y="92">
                             <int id="0" val="You Win!"/>
-                            <int id="1" val="320"/>
-                            <int id="2" val="265"/>
+                            <int id="1" val="300"/>
+                            <int id="2" val="240"/>
                         </draw-text>
                     </group>
-                    <get-val-3-3 comment="false" id="0" x="0" y="0"/>
+                    <get-val-3-2 comment="false" id="0" x="0" y="0"/>
                 </if>
+                <draw-text comment="false" x="26" y="124">
+                    <get-game-val-1 comment="false" id="0" x="0" y="0"/>
+                    <int id="1" val="200"/>
+                    <int id="2" val="200"/>
+                </draw-text>
             </group>
         </draw>
     </group>

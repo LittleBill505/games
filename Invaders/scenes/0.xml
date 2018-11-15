@@ -8,19 +8,14 @@
     <joints/>
     <regions/>
     <terrainRegions>
-        <terrainRegion b="64" g="64" group="1" h="1" id="0" name="Terrain 0" pts="4,0.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0" r="64" type="box" w="1" x="20" y="267"/>
+        <terrainRegion b="64" g="64" group="1" h="1" id="0" name="Terrain 0" pts="4,1.0,0.0,1.0,1.0,0.0,1.0,0.0,0.0" r="64" type="box" w="1" x="20" y="267"/>
     </terrainRegions>
     <actors>
-        <actor a="0.0" aid="19" c="false" group="4" id="2" name="Enemy Ship 19" sx="1.0" sy="1.0" x="48" y="33" z="0"/>
-        <actor a="0.0" aid="20" c="false" group="4" id="2" name="Enemy Ship 20" sx="1.0" sy="1.0" x="177" y="33" z="0"/>
-        <actor a="0.0" aid="21" c="false" group="4" id="2" name="Enemy Ship 21" sx="1.0" sy="1.0" x="305" y="34" z="0"/>
-        <actor a="0.0" aid="22" c="false" group="4" id="2" name="Enemy Ship 22" sx="1.0" sy="1.0" x="433" y="34" z="0"/>
-        <actor a="0.0" aid="23" c="false" group="4" id="2" name="Enemy Ship 23" sx="1.0" sy="1.0" x="563" y="34" z="0"/>
+        <actor a="0.0" aid="32" c="false" group="4" id="2" name="Enemy Ship 32" sx="1.0" sy="1.0" x="320" y="32" z="0"/>
+        <actor a="0.0" aid="33" c="false" group="4" id="2" name="Enemy Ship 33" sx="1.0" sy="1.0" x="448" y="32" z="0"/>
+        <actor a="0.0" aid="34" c="false" group="4" id="2" name="Enemy Ship 34" sx="1.0" sy="1.0" x="576" y="32" z="0"/>
         <actor a="0.0" aid="25" c="false" group="4" id="2" name="Enemy Ship 25" sx="1.0" sy="1.0" x="177" y="33" z="0"/>
         <actor a="0.0" aid="26" c="false" group="4" id="2" name="Enemy Ship 26" sx="1.0" sy="1.0" x="48" y="33" z="0"/>
-        <actor a="0.0" aid="27" c="false" group="4" id="2" name="Enemy Ship 27" sx="1.0" sy="1.0" x="305" y="34" z="0"/>
-        <actor a="0.0" aid="28" c="false" group="4" id="2" name="Enemy Ship 28" sx="1.0" sy="1.0" x="433" y="34" z="0"/>
-        <actor a="0.0" aid="29" c="false" group="4" id="2" name="Enemy Ship 29" sx="1.0" sy="1.0" x="563" y="34" z="0"/>
         <actor a="0.0" aid="30" c="false" group="0" id="0" name="Ship 30" sx="1.0" sy="1.0" x="320" y="416" z="0"/>
         <actor a="0.0" aid="31" c="false" group="0" id="0" name="Ship 31" sx="1.0" sy="1.0" x="320" y="416" z="0"/>
     </actors>
